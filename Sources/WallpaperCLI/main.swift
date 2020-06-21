@@ -111,7 +111,7 @@ final class ScreensCommand: Command {
 	let shortDescription = "List screens"
 
 	func execute() throws {
-		let output = Wallpaper.screenNames.enumerated().map { "\($0) - \($1)" } .joined(separator: "\n")
+		let output = Wallpaper.screenNames.enumerated().map { "\($0) - \($1)" }.joined(separator: "\n")
 		print(output)
 	}
 }
