@@ -21,7 +21,7 @@ let package = Package(
 		),
 	],
 	dependencies: [
-		.package(url: "https://github.com/jakeheis/SwiftCLI", from: "5.3.2"),
+		.package(url: "https://github.com/jakeheis/SwiftCLI", from: "6.0.0"),
 		.package(url: "https://github.com/stephencelis/SQLite.swift", from: "0.12.2")
 	],
 	targets: [
