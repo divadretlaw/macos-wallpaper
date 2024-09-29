@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
@@ -7,12 +7,6 @@ let package = Package(
 		.macOS(.v10_15)
 	],
 	products: [
-		.executable(
-			name: "wallpaper",
-			targets: [
-				"WallpaperCLI"
-			]
-		),
 		.library(
 			name: "Wallpaper",
 			targets: [
@@ -25,16 +19,6 @@ let package = Package(
 		.package(url: "https://github.com/stephencelis/SQLite.swift", from: "0.13.1")
 	],
 	targets: [
-		.executableTarget(
-			name: "WallpaperCLI",
-			dependencies: [
-				"Wallpaper",
-				.product(
-					name: "ArgumentParser",
-					package: "swift-argument-parser"
-				)
-			]
-		),
 		.target(
 			name: "Wallpaper",
 			dependencies: [
@@ -42,7 +26,10 @@ let package = Package(
 					name: "SQLite",
 					package: "SQLite.swift"
 				)
-			]
+			],
+            swiftSettings: [
+                .enableExperimentalFeature("StrictConcurrency")
+            ]
 		)
 	]
 )
