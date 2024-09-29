@@ -48,8 +48,8 @@ public enum Wallpaper {
 		let dbURL = appSupportDirectory.appendingPathComponent("Dock/desktoppicture.db", isDirectory: false)
 
 		let table = Table("data")
-		let column = Expression<String>("value")
-		let rowID = Expression<Int64>("rowid")
+		let column = Expression<String>(value: "value")
+		let rowID = Expression<Int64>(value: "rowid")
 
 		let db = try Connection(dbURL.path)
 		let maxID = try db.scalar(table.select(rowID.max))!
